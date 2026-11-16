@@ -39,4 +39,16 @@ public class DescuentosTest {
         assertEquals("El valor no puede ser negativo", excepcion.getMessage());
     }
 
+    @Test
+    void rechazaTipoDeClienteInvalido() {
+        Descuentos descuentos = new Descuentos();
+
+        IllegalArgumentException excepcion = assertThrows(
+                IllegalArgumentException.class,
+                () -> descuentos.aplicarDescuento(3000, "vip")
+        );
+
+        assertEquals("Tipo de cliente no válido", excepcion.getMessage());
+    }
+
 }
