@@ -16,4 +16,14 @@ public class DescuentosTest {
 
         assertEquals(2700, resultado);
     }
+
+    @Test
+    void aplicaDescuentoAClienteConConvenio() {
+        Descuentos descuentos = new Descuentos();
+
+        int resultado = descuentos.aplicarDescuento(25000, "convenio");
+
+        assertEquals(20000, resultado);
+    }
+
 }
