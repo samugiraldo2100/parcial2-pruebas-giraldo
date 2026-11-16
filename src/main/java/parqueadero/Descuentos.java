@@ -4,6 +4,10 @@ package parqueadero;
 public class Descuentos {
 
     public int aplicarDescuento(int valor, String tipoCliente) {
+        if (valor < 0) {
+            throw new IllegalArgumentException("El valor no puede ser negativo");
+        }
+
         if ("frecuente".equals(tipoCliente)) {
             return (int) Math.floor(valor * 0.9);
         }
