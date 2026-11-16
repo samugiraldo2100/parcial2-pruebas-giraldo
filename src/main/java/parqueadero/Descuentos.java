@@ -1,3 +1,4 @@
+
 package parqueadero;
 
 public class Descuentos {
@@ -7,6 +8,11 @@ public class Descuentos {
             return (int) Math.floor(valor * 0.9);
         }
 
+        if ("convenio".equals(tipoCliente)) {
+            return (int) Math.floor(valor * 0.8);
+        }
+
         return valor;
     }
 }
+
