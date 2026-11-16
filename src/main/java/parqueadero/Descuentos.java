@@ -16,7 +16,10 @@ public class Descuentos {
             return (int) Math.floor(valor * 0.8);
         }
 
-        return valor;
+        if ("ninguno".equals(tipoCliente)) {
+            return valor;
+        }
+
+        throw new IllegalArgumentException("Tipo de cliente no válido");
     }
 }
-
