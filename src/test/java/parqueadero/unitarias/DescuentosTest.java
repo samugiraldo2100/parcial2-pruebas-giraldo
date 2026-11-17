@@ -51,4 +51,32 @@ public class DescuentosTest {
         assertEquals("Tipo de cliente no válido", excepcion.getMessage());
     }
 
+
+    @Test
+    void clienteSinDescuentoPagaValorCompleto() {
+        Descuentos descuentos = new Descuentos();
+
+        int resultado = descuentos.aplicarDescuento(3000, "ninguno");
+
+        assertEquals(3000, resultado);
+    }
+
+    @Test
+    void redondeaDescuentoHaciaAbajo() {
+        Descuentos descuentos = new Descuentos();
+
+        int resultado = descuentos.aplicarDescuento(1999, "frecuente");
+
+        assertEquals(1799, resultado);
+    }
+
+    @Test
+    void permiteValorCero() {
+        Descuentos descuentos = new Descuentos();
+
+        int resultado = descuentos.aplicarDescuento(0, "convenio");
+
+        assertEquals(0, resultado);
+    }
+
 }
